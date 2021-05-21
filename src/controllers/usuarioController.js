@@ -8,8 +8,8 @@ export function autenticacion(req, res)
    nombreUsuario: req.body.usuario,
    usuarioId:12
   };
-  const token = jwt.sign(payload, "llave", {
-   expiresIn: 1440  //tiempo de vencimiento en minutos
+  const token = jwt.sign(payload, "lalal", {
+   expiresIn: 1440 ,algorithm:"HS256" //tiempo de vencimiento en minutos
   });
   /*const token = jwt.sign(payload, "llave", {
     expiresIn: 1440  //tiempo de vencimiento en minutos
