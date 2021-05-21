@@ -1,13 +1,15 @@
 const jwt = require('jsonwebtoken')
 
 const auth = async(req, res, next) => {
-   const token = req.header('Authorization').replace('Bearer ', '')
    try {
+    const token = req.header('Authorization').replace('Bearer ', '')
+
       //const user = await User.findOne({ _id: data._id, 'tokens.token': token })
-      if (!token) {
-        const data = jwt.verify(token, process.env.JWT_SECRET,(err, decoded) => {      
+      if (token) {
+        const data = jwt.verify(token, "llave",(err, decoded) => { 
+        //const data = jwt.verify(token, process.env.JWT_SECRET,(err, decoded) => {      
           if (err) {
-            return res.json({ mensaje: 'Token inválida' });    
+            return res.json({ mensaje: 'Token inválido' });    
           } else {
             req.decoded = decoded;    
             next();

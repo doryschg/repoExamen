@@ -16,7 +16,7 @@ app.use(json());
 
 //routes
 app.use('/api/proyectos',auth,proyectoRoutes);
-app.use('/api/tareas',tareaRoutes);
+app.use('/api/tareas',auth,tareaRoutes);
 app.use('/api/autenticacion',usuarioRoutes);
 
 export default app;
