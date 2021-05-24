@@ -5,11 +5,15 @@ import auth from './middlewares/auth-middleware';
 
 //importar rutas
 
+
+//initialization
 const app = express();
 
 ///midlewares
 app.use(morgan('dev'));
 app.use(json());
+
+
 
 //routes
 
